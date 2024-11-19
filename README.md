@@ -5,7 +5,7 @@ Chromium is an open-source browser project that aims to build a safer, faster, a
     You can easily run your Node Extensions
 
 Install Docker
-~~~
+~~~ruby
 sudo apt update -y && sudo apt upgrade -y
 for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
 
@@ -28,18 +28,18 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 docker --version
 ~~~
 check timezone 
-~~~
+~~~ruby
 realpath --relative-to /usr/share/zoneinfo /etc/localtime
 ~~~
 
 Install Chromium
 1. Create directory
-~~~
+~~~ruby
 mkdir chromium
 cd chromium
 ~~~
 2. Create docker-compose.yaml file
-~~~
+~~~ruby
 nano docker-compose.yaml
 ~~~
 3. Paste the following code in it
@@ -48,7 +48,7 @@ nano docker-compose.yaml
     TZ: Replace with your server timezone
     CHROME_CLI: The main page when you open browser
     ports: You can replace 3010 & 3011 if they have conflict
-~~~
+~~~ruby
 ---
 services:
   chromium:
@@ -77,7 +77,7 @@ services:
 
 
 Stop and Delete Chromium
-~~~
+~~~ruby
 docker stop chromium
 docker rm chromium
 docker system prune
